@@ -7,23 +7,18 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
 
 / {
     macros {
-        auto_clicker: auto_clicker {
+        snip: snip {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&mkp LCLK>, <&macro_wait_time 1>;
+            bindings =
+                <&none>,
+                <&macro_tap>,
+                <&kp LEFT_WIN &kp LS(S) &kp N &kp I &kp P &kp P &kp I &kp N &kp G &kp SPACE &kp LS(T) &kp O &kp O &kp L &kp ENTER>;
 
-            label = "AUTO_CLICKER";
-        };
-
-        new_macro: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            label = "NEW_MACRO";
+            label = "SNIP";
         };
     };
 
@@ -40,11 +35,11 @@
 
             display-name = "Base";
             bindings = <
-&kp GRAVE   &kp N1  &kp N2  &kp N3  &kp N4      &kp N5                          &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB     &kp Q   &kp W   &kp E   &kp R       &kp T                           &kp Y   &kp U      &kp I      &kp O    &kp P     &kp BACKSLASH
-&caps_word  &kp A   &kp S   &kp D   &kp F       &kp G                           &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT   &kp Z   &kp X   &kp C   &kp V       &kp B   &none        &none      &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
-                            &none   &kp ESCAPE  &to 1   &kp ENTER    &kp SPACE  &to 2   &kp MINUS  &none
+&kp GRAVE   &kp N1  &kp N2  &kp N3        &kp N4      &kp N5                          &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB     &kp Q   &kp W   &kp E         &kp R       &kp T                           &kp Y   &kp U      &kp I      &kp O    &kp P     &kp BACKSLASH
+&kp DELETE  &kp A   &kp S   &kp D         &kp F       &kp G                           &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
+&kp LSHFT   &kp Z   &kp X   &kp C         &kp V       &kp B   &none        &none      &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
+                            &kp LEFT_WIN  &kp ESCAPE  &to 1   &kp ENTER    &kp SPACE  &to 2   &kp MINUS  &none
             >;
         };
 
@@ -60,11 +55,11 @@
 
         layer_2 {
             bindings = <
-&bt BT_SEL 0      &bt BT_SEL 1  &none  &none  &none         &auto_clicker                             &none     &none     &none    &none      &none  &kp BACKSPACE
-&none             &none         &none  &none  &none         &none                                     &none     &kp U     &none    &kp P      &none  &none
-&none             &kp A         &kp S  &kp D  &kp F         &none                                     &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &none  &none
-&kp LEFT_CONTROL  &kp Z         &kp X  &kp C  &kp V         &none          &bt BT_CLR_ALL      &none  &none     &kp HOME  &kp END  &none      &none  &none
-                                       &none  &kp LEFT_ALT  &to 1          &kp LEFT_CONTROL    &none  &to 0     &none     &none
+&bt BT_SEL 0      &bt BT_SEL 1  &none  &none  &none         &kp PRINTSCREEN                             &snip     &none     &none    &none      &none  &kp BACKSPACE
+&none             &none         &none  &none  &none         &none                                       &none     &kp U     &none    &kp P      &none  &none
+&none             &kp A         &kp S  &kp D  &kp F         &none                                       &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &none  &kp RETURN
+&kp LEFT_CONTROL  &kp Z         &kp X  &kp C  &kp V         &none            &bt BT_CLR_ALL      &none  &none     &kp HOME  &kp END  &none      &none  &none
+                                       &none  &kp LEFT_ALT  &to 0            &kp LEFT_CONTROL    &none  &to 0     &none     &none
             >;
         };
     };
