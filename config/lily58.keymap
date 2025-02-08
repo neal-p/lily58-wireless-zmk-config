@@ -9,19 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    macros {
-        snip: snip {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&none>,
-                <&macro_tap>,
-                <&kp LEFT_WIN &kp LS(S) &kp N &kp I &kp P &kp P &kp I &kp N &kp G &kp SPACE &kp LS(T) &kp O &kp O &kp L &kp ENTER>;
-
-            label = "SNIP";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -55,11 +42,11 @@
 
         layer_2 {
             bindings = <
-&bt BT_SEL 0      &bt BT_SEL 1  &none  &none  &none         &kp PRINTSCREEN                             &snip     &none     &none    &none      &none  &kp BACKSPACE
+&bt BT_SEL 0      &bt BT_SEL 1  &none  &none  &none         &kp PRINTSCREEN                             &none     &none     &none    &none      &none  &kp BACKSPACE
 &none             &none         &none  &none  &none         &none                                       &none     &kp U     &none    &kp P      &none  &none
 &none             &kp A         &kp S  &kp D  &kp F         &none                                       &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &none  &kp RETURN
 &kp LEFT_CONTROL  &kp Z         &kp X  &kp C  &kp V         &none            &bt BT_CLR_ALL      &none  &none     &kp HOME  &kp END  &none      &none  &none
-                                       &none  &kp LEFT_ALT  &to 0            &kp LEFT_CONTROL    &none  &to 0     &none     &none
+                                       &none  &kp LEFT_ALT  &to 1            &kp LEFT_CONTROL    &none  &to 0     &none     &none
             >;
         };
     };
