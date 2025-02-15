@@ -9,6 +9,31 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        parenthesis: parenthesis {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT_ARROW>;
+            label = "PARENTHESIS";
+        };
+    };
+
+    behaviors {
+        layer1_special: layer1_special {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER1_SPECIAL";
+            #binding-cells = <0>;
+            bindings = <&sl 1>, <&to 1>, <&to 0>;
+        };
+
+        layer2_special: layer2_special {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER2_SPECIAL";
+            #binding-cells = <0>;
+            bindings = <&sl 2>, <&to 2>, <&to 0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -22,11 +47,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp N1  &kp N2  &kp N3        &kp N4      &kp N5                          &kp N6  &kp N7     &kp N8     &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB     &kp Q   &kp W   &kp E         &kp R       &kp T                           &kp Y   &kp U      &kp I      &kp O    &kp P     &kp BACKSLASH
-&kp DELETE  &kp A   &kp S   &kp D         &kp F       &kp G                           &kp H   &kp J      &kp K      &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT   &kp Z   &kp X   &kp C         &kp V       &kp B   &none        &none      &kp N   &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
-                            &kp LEFT_WIN  &kp ESCAPE  &to 1   &kp ENTER    &kp SPACE  &to 2   &kp MINUS  &none
+&kp ESCAPE  &kp N1  &kp N2  &kp N3        &kp N4           &kp N5                                &kp N6     &kp N7           &kp N8     &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB     &kp Q   &kp W   &kp E         &kp R            &kp T                                 &kp Y      &kp U            &kp I      &kp O    &kp P     &kp BACKSLASH
+&kp DELETE  &kp A   &kp S   &kp D         &kp F            &kp G                                 &kp H      &kp J            &kp K      &kp L    &kp SEMI  &kp ENTER
+&kp LSHFT   &kp Z   &kp X   &kp C         &kp V            &kp B         &none        &none      &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH  &kp SINGLE_QUOTE
+                            &kp LEFT_WIN  &layer1_special  &parenthesis  &kp MINUS    &kp SPACE  &kp EQUAL  &layer2_special  &none
             >;
         };
 
