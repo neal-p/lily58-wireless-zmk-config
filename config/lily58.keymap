@@ -25,6 +25,8 @@
             label = "LAYER1_SPECIAL";
             #binding-cells = <0>;
             bindings = <&sl 1>, <&to 1>, <&to 0>;
+
+            tapping-term-ms = <500>;
         };
 
         layer2_special: layer2_special {
@@ -32,6 +34,8 @@
             label = "LAYER2_SPECIAL";
             #binding-cells = <0>;
             bindings = <&sl 2>, <&to 2>, <&to 0>;
+
+            tapping-term-ms = <500>;
         };
 
         always_to_0: always_to_0 {
@@ -39,6 +43,8 @@
             label = "ALWAYS_TO_0";
             #binding-cells = <0>;
             bindings = <&to 0>, <&to 0>, <&to 0>;
+
+            tapping-term-ms = <500>;
         };
     };
 
@@ -67,7 +73,7 @@
             bindings = <
 &none           &none             &none                     &none   &none          &none                                   &none            &none         &none         &none          &none     &kp BACKSPACE
 &none           &kp N1            &kp N2                    &kp N3  &kp N4         &kp N5                                  &kp N6           &kp N7        &kp N8        &kp N9         &kp N0    &none
-&none           &kp LEFT_BRACKET  &kp LS(LEFT_PARENTHESIS)  &kp AT  &kp HASH       &kp GRAVE                               &kp EXCLAMATION  &kp EXCL      &kp ASTERISK  &kp LS(RPAR)   &kp RBKT  &kp ENTER
+&none           &kp LEFT_BRACKET  &kp LS(LEFT_PARENTHESIS)  &kp AT  &kp HASH       &kp TILDE                               &kp EXCLAMATION  &kp EXCL      &kp ASTERISK  &kp LS(RPAR)   &kp RBKT  &kp ENTER
 &kp LEFT_SHIFT  &none             &none                     &none   &kp SEMICOLON  &kp NON_US_BACKSLASH  &none     &none   &kp CARET        &kp DOLLAR    &kp PERCENT   &kp AMPERSAND  &none     &none
                                                             &none   &always_to_0   &trans                &trans    &trans  &trans           &always_to_0  &trans
             >;
