@@ -100,7 +100,7 @@
 &bt BT_SEL 0      &bt BT_SEL 1  &bt BT_CLR  &none        &none         &kp PRINTSCREEN                    &kp CAPSLOCK  &none         &none    &none      &none  &kp BACKSPACE
 &none             &none         &none       &none        &kp R         &none                              &mkp RCLK     &kp U         &none    &kp P      &none  &none
 &kp DELETE        &kp A         &kp S       &kp D        &kp F         &none                              &kp LEFT      &kp DOWN      &kp UP   &kp RIGHT  &none  &kp RETURN
-&kp LEFT_CONTROL  &kp Z         &kp X       &kp C        &kp V         &none            &none     &none   &kp HOME      &kp HOME      &kp END  &kp END    &none  &to 4
+&kp LEFT_CONTROL  &kp Z         &kp X       &kp C        &kp V         &none            &none     &none   &kp HOME      &kp HOME      &kp END  &kp END    &none  &to 3
                                             &key_repeat  &always_to_0  &trans           &trans    &trans  &trans        &always_to_0  &none
             >;
         };
