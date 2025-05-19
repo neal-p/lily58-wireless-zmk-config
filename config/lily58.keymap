@@ -72,7 +72,7 @@
             hold-trigger-on-release;
             flavor = "balanced";
             require-prior-idle-ms = <10>;
-            quick-tap-ms = <50>;
+            quick-tap-ms = <1000>;
             tapping-term-ms = <10000>;
         };
 
@@ -86,6 +86,19 @@
             flavor = "balanced";
             require-prior-idle-ms = <10>;
             quick-tap-ms = <50>;
+            tapping-term-ms = <10000>;
+        };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NEW_BEHAVIOR";
+            bindings = <&to>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-on-release;
+            flavor = "balanced";
+            require-prior-idle-ms = <10>;
+            quick-tap-ms = <1000>;
             tapping-term-ms = <10000>;
         };
     };
