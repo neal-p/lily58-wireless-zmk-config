@@ -69,7 +69,6 @@
             bindings = <&to>, <&kp>;
 
             #binding-cells = <2>;
-            hold-trigger-on-release;
             flavor = "balanced";
             require-prior-idle-ms = <10>;
             quick-tap-ms = <1000>;
@@ -82,7 +81,6 @@
             bindings = <&to>, <&kp>;
 
             #binding-cells = <2>;
-            hold-trigger-on-release;
             flavor = "balanced";
             require-prior-idle-ms = <10>;
             quick-tap-ms = <50>;
